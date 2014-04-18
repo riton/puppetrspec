@@ -1,0 +1,3 @@
+class { 'puppetrspec':
+#    ensure => 'plop'
+}
