@@ -13,8 +13,8 @@ describe 'puppetrspec', :type => :class do
             :ensure     => 'something NOT UNDEF'
         } end
 
-        it 'should have file' do
-            should contain_file(filename)
+        it 'should have File with ensure file' do
+            should contain_file(filename).with_ensure('file')
         end
 
     end
@@ -25,8 +25,8 @@ describe 'puppetrspec', :type => :class do
             :ensure     => '# WHAT SHOULD WE USE HERE TO PASS PUPPET undef VALUE ?#'
         } end
 
-        it 'should NOT have file' do
-            should_not contain_file(filename)
+        it 'should have File with ensure absent' do
+            should contain_file(filename).with_ensure('absent')
         end
 
     end
